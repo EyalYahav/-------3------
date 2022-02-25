@@ -1,0 +1,55 @@
+CREATE DATABASE vacationSite;
+USE vacationSite;
+
+CREATE TABLE users(
+	user_id INT AUTO_INCREMENT,
+    firstName VARCHAR(30),
+    lastName VARCHAR(30),
+    username VARCHAR(30),
+    password VARCHAR(30),
+    role VARCHAR(30) DEFAULT "user",
+    PRIMARY KEY (user_id)
+);
+
+CREATE TABLE vacations(
+	vacation_id INT AUTO_INCREMENT,
+    description VARCHAR(180),
+    destination VARCHAR(255),
+    image VARCHAR(255),
+    fromDate DATE,
+    untilDate DATE,
+    price INT,
+    isFollowed TINYINT,
+    PRIMARY KEY (vacation_id)
+);
+
+CREATE TABLE follows(
+	user_id INT ,
+    vacation_id INT ,
+    FOREIGN KEY (user_id) REFERENCES users(user_id), 
+    FOREIGN KEY (vacation_id) REFERENCES vacations(vacation_id)
+    
+);
+
+INSERT INTO users (firstName, lastName, username, password, role)
+	VALUES ("admin", "admin", "admin", "123", "admin"),
+    ("user", "user", "user", "123", "user"),
+    ("user2", "user2", "user2", "123", "user"),
+    ("user3", "user3", "user3", "123", "user");
+    
+    
+
+INSERT INTO vacations (description, destination, image, fromDate, untilDate, price, isFollowed)
+	VALUES ("Amsterdam is located in the Western Netherlands, in the province of North Holland.","Amsterdam, Holland","https://i.guim.co.uk/img/media/f62f9ed605add7b0651115e17de2b0242c6a8772/0_204_5472_3285/master/5472.jpg?width=465&quality=45&auto=format&fit=max&dpr=2&s=83dfc78b9d4ed4ba960ea2bd69bfdf15","2022-03-11","2022-03-14",199,0),
+    ("Berlin, capital and chief urban center of Germany. The city lies at the heart of the North German Plain.","Berlin, Germany","https://www.visitberlin.de/system/files/image/og_image.jpg","2022-02-28","2022-03-01",149,0),
+    ("Eilat is one of Israel’s major resorts whose Red Sea beaches and dozens of hotels attract tourists from 100 countries.","Eilat, Israel","https://www.elal.com/magazine/wp-content/uploads/2018/06/Eilat-Shopping-2.jpg","2022-04-10","2022-04-14",999,0),
+    ("Tokyo is the most populous metropolitan area in Japan, as well as the most populous prefecture of Japan","Tokyo, Japan","https://media.cntraveler.com/photos/60341fbad7bd3b27823c9db2/16:9/w_2560%2Cc_limit/Tokyo-2021-GettyImages-1208124099.jpg","2022-10-23","2022-10-30",300,0),
+    ("New York City has been described as the cultural, financial, and media capital of the world, and is the most photographed city in the world.","New York, USA","https://www.ervpojistovna.cz/pic/new-york-zalette-si/newyork-vylet1.jpg","2022-07-23","2022-08-23",1449,0);
+    
+
+
+
+
+    
+    
+    

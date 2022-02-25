@@ -1,0 +1,83 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+.app{
+  height: 100vh;
+
+}
+.header h5{
+  cursor: pointer;
+  padding: 10px;
+}
+.header  * h5:hover{
+background-color: rgb(218, 130, 63);
+border-radius: 20px;
+ 
+}
+.favoritesBTN{
+  padding-bottom: 0px;
+}
+.helloUser{
+  display: flex;
+  align-items: center;
+}
+.register , .login, .add , .edit{
+  text-align: center;
+}
+.list{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 15px;
+}
+.card{
+  margin: 0 0 10px 10px ;
+}
+.fBTN{
+  background-color: unset;
+  border: unset;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  padding-top: 4px;
+}
+.fBTN:hover{
+  background-color: rgb(255, 245, 238);
+}
+.inputDate{
+  width: 150px;
+  height: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 5px;
+  border: 1px solid rgb(192, 191, 191);
+}
+.chartDiv{
+  width: 100%;
+  padding-right: 20vh;
+  padding-left: 20vh;
+  padding-top: 30px;
+}
+.spanF{
+  width: 100%;
+  text-align: center;
+}
+.spanShow{
+  color: red;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+.spanHide{
+  display: none;  
+}
+.noOne{
+  text-align: center;
+}
+
+
